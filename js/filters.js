@@ -18,7 +18,15 @@ angular.module('your_app_name.filters', [])
                 return input.substring(0, 1).toUpperCase() + input.substring(1);
             }
         })
-
+        
+        .filter('tolowercase',function(){
+            return function(input,scope){
+                if(input != null){
+                    input = input.toLowerCase();
+                }
+                return input;
+            }
+        })
         .filter('capitalizeEach', function () {
             return function (input) {
                 if (input.indexOf(' ') !== -1) {
